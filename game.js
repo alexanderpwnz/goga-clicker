@@ -28,6 +28,24 @@ function buyUpgrade() {
     }
 }
 
+function selectCharacter(character) {
+    const photo = document.getElementById('friend-photo');
+    if (character === 'goga') {
+        photo.src = 'images/friend.jpg';
+    } else if (character === 'oleg') {
+        photo.src = 'images/oleg.jpg'; // Путь к изображению Олега
+    }
+    resetGame();
+}
+
+function resetGame() {
+    score = 0;
+    level = 1;
+    pointsPerClick = 1;
+    updateScore();
+    document.getElementById('level').innerText = `Level: ${level}`;
+}
+
 // Function to randomly give bonuses
 function giveBonus() {
     setInterval(() => {
